@@ -1,4 +1,4 @@
-export default function(shepherd) {
+export default (shepherd) => {
   return [
     {
       text: `

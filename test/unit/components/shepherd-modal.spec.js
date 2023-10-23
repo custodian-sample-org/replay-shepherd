@@ -4,8 +4,8 @@ import { stub } from 'sinon';
 const classPrefix = '';
 
 describe('components/ShepherdModal', () => {
-  describe('closeModalOpening()', function() {
-    it('sets values back to 0', async() => {
+  describe('closeModalOpening()', () => {
+  it('sets values back to 0', async() => {
       const modalComponent = new ShepherdModal({
         target: document.body,
         props: {
@@ -40,10 +40,10 @@ describe('components/ShepherdModal', () => {
 
       modalComponent.$destroy();
     });
-  });
+});
 
-  describe('positionModal()', function() {
-    it('sets the correct attributes when positioning modal opening', async() => {
+  describe('positionModal()', () => {
+  it('sets the correct attributes when positioning modal opening', async() => {
       const modalComponent = new ShepherdModal({
         target: document.body,
         props: {
@@ -244,10 +244,10 @@ describe('components/ShepherdModal', () => {
 
       modalComponent.$destroy();
     });
-  });
+});
 
-  describe('setupForStep()', function() {
-    let hideStub, showStub;
+  describe('setupForStep()', () => {
+  let hideStub, showStub;
 
     afterEach(() => {
       hideStub.restore();
@@ -307,10 +307,10 @@ describe('components/ShepherdModal', () => {
 
       modalComponent.$destroy();
     });
-  });
+});
 
-  describe('show/hide', function() {
-    const modalComponent = new ShepherdModal({
+  describe('show/hide', () => {
+  const modalComponent = new ShepherdModal({
       target: document.body,
       props: {
         classPrefix
@@ -334,5 +334,5 @@ describe('components/ShepherdModal', () => {
 
       modalComponent.$destroy();
     });
-  });
+});
 });

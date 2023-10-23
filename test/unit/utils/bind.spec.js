@@ -2,7 +2,7 @@ import { bindAdvance } from '../../../src/js/utils/bind.js';
 import { Step } from '../../../src/js/step.js';
 import { spy } from 'sinon';
 
-describe('Bind Utils', function() {
+describe('Bind Utils', () => {
   describe('bindAdvance()', () => {
     let event,
       link;
@@ -76,8 +76,7 @@ describe('Bind Utils', function() {
       expect(hasAdvanced, '`next()` triggered for advanceOn').toBeTruthy();
     });
 
-    it('calls `removeEventListener` when destroyed', () => {
-      return new Promise((done) => {
+    it('calls `removeEventListener` when destroyed', () => new Promise((done) => {
         const bodySpy = spy(document.body, 'removeEventListener');
         const step = new Step(tourProto, {
           advanceOn: { event: advanceOnEventName }
@@ -92,7 +91,6 @@ describe('Bind Utils', function() {
         bodySpy.restore();
 
         done();
-      });
-    });
+      }));
   });
 });

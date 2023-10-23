@@ -19,8 +19,7 @@ describe('Shepherd Acceptance Tests', () => {
   describe('Step options', () => {
     describe('attachTo', () => {
       it('works with selectors', () => {
-        const steps = () => {
-          return [
+        const steps = () => [
             {
               text: 'Shepherd is a JavaScript library',
               attachTo: {
@@ -31,7 +30,6 @@ describe('Shepherd Acceptance Tests', () => {
               id: 'welcome'
             }
           ];
-        };
 
         const tour = setupTour(Shepherd, {
           cancelIcon: {
@@ -54,8 +52,7 @@ describe('Shepherd Acceptance Tests', () => {
         cy.document().then((document) => {
           const heroIncludingElement = document.querySelector('[data-test-hero-including]');
 
-          const steps = () => {
-            return [
+          const steps = () => [
               {
                 title: 'Including',
                 text: 'Including Shepherd is easy!',
@@ -66,7 +63,6 @@ describe('Shepherd Acceptance Tests', () => {
                 id: 'including'
               }
             ];
-          };
           const tour = setupTour(Shepherd, {
             cancelIcon: {
               enabled: false
@@ -82,8 +78,7 @@ describe('Shepherd Acceptance Tests', () => {
 
       it('works with functions returning DOM elements', () => {
         cy.document().then((document) => {
-          const steps = () => {
-            return [
+          const steps = () => [
               {
                 text: 'You may provide function returning DOM node references.',
                 attachTo: {
@@ -93,7 +88,6 @@ describe('Shepherd Acceptance Tests', () => {
                 id: 'including'
               }
             ];
-          };
           const tour = setupTour(Shepherd, {
             cancelIcon: {
               enabled: false
@@ -113,8 +107,7 @@ describe('Shepherd Acceptance Tests', () => {
 
       it('works with functions returning selectors', () => {
         cy.document().then((document) => {
-          const steps = () => {
-            return [
+          const steps = () => [
               {
                 text: 'You may provide functions returning selectors.',
                 attachTo: {
@@ -124,7 +117,6 @@ describe('Shepherd Acceptance Tests', () => {
                 id: 'including'
               }
             ];
-          };
           const tour = setupTour(Shepherd, {
             cancelIcon: {
               enabled: false
@@ -144,8 +136,7 @@ describe('Shepherd Acceptance Tests', () => {
 
       it('works with functions returning null', () => {
         cy.document().then(() => {
-          const steps = () => {
-            return [
+          const steps = () => [
               {
                 text: 'When attachTo.element callback returns null, the step is centered.',
                 attachTo: {
@@ -155,7 +146,6 @@ describe('Shepherd Acceptance Tests', () => {
                 id: 'including'
               }
             ];
-          };
           const tour = setupTour(Shepherd, {
             cancelIcon: {
               enabled: false
@@ -172,15 +162,13 @@ describe('Shepherd Acceptance Tests', () => {
       });
 
       it('works when undefined', () => {
-        const steps = () => {
-          return [
+        const steps = () => [
             {
               id: 'undefined-attachto',
               title: 'Undefined attachTo',
               text: 'When attachTo is undefined, the step is centered.'
             }
           ];
-        };
         const tour = setupTour(Shepherd, {
           cancelIcon: {
             enabled: false
@@ -196,8 +184,7 @@ describe('Shepherd Acceptance Tests', () => {
       });
 
       it('works with selectors that do not exist in the DOM', () => {
-        const steps = () => {
-          return [
+        const steps = () => [
             {
               text: 'When attachTo.element selector is not present in the DOM, the step is centered.',
               attachTo: {
@@ -208,7 +195,6 @@ describe('Shepherd Acceptance Tests', () => {
               id: 'welcome'
             }
           ];
-        };
 
         const tour = setupTour(Shepherd, {
           cancelIcon: {
@@ -231,8 +217,7 @@ describe('Shepherd Acceptance Tests', () => {
       
       it('correctly attaches to multiple lazily-evaluated elements', () => {
         cy.document().then((document) => {
-          const steps = () => {
-            return [
+          const steps = () => [
               {
                 text: 'foo'
               },
@@ -253,7 +238,6 @@ describe('Shepherd Acceptance Tests', () => {
                 id: 'baz'
               }
             ];
-          };
 
           const tour = setupTour(Shepherd, {
             cancelIcon: {
@@ -319,8 +303,7 @@ describe('Shepherd Acceptance Tests', () => {
 
       it('correctly attaches to lazily-evaluated elements', () => {
         cy.document().then((document) => {
-          const steps = () => {
-            return [
+          const steps = () => [
               {
                 text: 'Dummy step'
               },
@@ -333,7 +316,6 @@ describe('Shepherd Acceptance Tests', () => {
                 id: 'lazyStep'
               }
             ];
-          };
 
           const tour = setupTour(Shepherd, {
             cancelIcon: {
