@@ -16,8 +16,7 @@ describe('destroying-elements', () => {
   });
 
   it('recalculates positioning when element is removed and added', () => {
-    const steps = () => {
-      return [
+    const steps = () => [
         {
           attachTo: { element: '.first', on: 'bottom' },
           id: 'first',
@@ -31,7 +30,6 @@ describe('destroying-elements', () => {
           text: 'Please click the destroy button and then the create button. After the First element is created, please click back'
         }
       ];
-    };
 
     const tour = setupTour(Shepherd, {
       cancelIcon: {

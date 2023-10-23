@@ -1,7 +1,6 @@
 import { cleanupSteps } from '../../../src/js/utils/cleanup.js';
 
-describe('Cleanup Utils', function() {
-  // Create some elements to use to attach to
+describe('Cleanup Utils', () => {
   const firstAttachElement = document.createElement('div');
   firstAttachElement.classList.add('first-attach-to');
   firstAttachElement.classList.add('shepherd-target-click-disabled');
@@ -39,8 +38,8 @@ describe('Cleanup Utils', function() {
     ]
   };
 
-  describe('cleanupSteps', function() {
-    it('cleans up steps and removes shepherd-target-click-disabled class', () => {
+  describe('cleanupSteps', () => {
+  it('cleans up steps and removes shepherd-target-click-disabled class', () => {
       expect(firstAttachElement).toHaveClass('shepherd-target-click-disabled');
       expect(secondAttachElement).toHaveClass('shepherd-target-click-disabled');
 
@@ -49,5 +48,5 @@ describe('Cleanup Utils', function() {
       expect(firstAttachElement).not.toHaveClass('shepherd-target-click-disabled');
       expect(secondAttachElement).not.toHaveClass('shepherd-target-click-disabled');
     });
-  });
+});
 });

@@ -44,14 +44,10 @@ export function bindAdvance(step) {
       );
     } else if (el) {
       el.addEventListener(event, handler);
-      step.on('destroy', () => {
-        return el.removeEventListener(event, handler);
-      });
+      step.on('destroy', () => el.removeEventListener(event, handler));
     } else {
       document.body.addEventListener(event, handler, true);
-      step.on('destroy', () => {
-        return document.body.removeEventListener(event, handler, true);
-      });
+      step.on('destroy', () => document.body.removeEventListener(event, handler, true));
     }
   } else {
     return console.error(

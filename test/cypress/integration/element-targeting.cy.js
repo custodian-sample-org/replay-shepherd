@@ -44,8 +44,8 @@ describe('Attaching tooltips to target elements in the DOM on each step', () => 
     });
   });
 
-  describe('Unique selectors with multiple Tours', function() {
-    let firstTour, secondTour;
+  describe('Unique selectors with multiple Tours', () => {
+  let firstTour, secondTour;
 
     beforeEach(() => {
       firstTour = setupTour(Shepherd, {}, null, {
@@ -67,13 +67,13 @@ describe('Attaching tooltips to target elements in the DOM on each step', () => 
       firstTour.complete();
       secondTour.complete();
     });
-    it('applies default classes only on each individual tour', async function() {
-      firstTour.start();
+    it('applies default classes only on each individual tour', () => {
+  firstTour.start();
       secondTour.start();
 
       cy.get('.shepherd-element').should('have.length', 2);
       cy.get('.test-tour-1.shepherd-element').should('have.length', 1);
       cy.get('.test-tour-2.shepherd-element').should('have.length', 1);
-    });
-  });
+});
+});
 });
