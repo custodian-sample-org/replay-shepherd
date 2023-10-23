@@ -7,7 +7,7 @@ import defaultSteps from './default-steps';
  * @param {function} customSteps An array of the steps to add to the tour
  * @param {Object} otherOptions A hash of other options to pass to Shepherd
  */
-export default function(Shepherd, globalDefaults, customSteps, otherOptions) {
+export default (Shepherd, globalDefaults, customSteps, otherOptions) => {
   const defaultStepOptions = Object.assign({}, {
     cancelIcon: {
       enabled: true
