@@ -1,11 +1,11 @@
 'use strict';
 
-(function() {
+(() => {
   function init() {
     var shepherd = setupShepherd();
-    setTimeout(function() {
-      shepherd.start();
-    }, 400);
+    setTimeout(() => {
+  shepherd.start();
+}, 400);
   }
 
   function setupShepherd() {

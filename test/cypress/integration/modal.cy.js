@@ -65,8 +65,7 @@ describe('Modal mode', () => {
   });
 
   describe('highlight', () => {
-    const steps = () => {
-      return [
+    const steps = () => [
         {
           attachTo: {
             element: '.hero-welcome',
@@ -77,7 +76,6 @@ describe('Modal mode', () => {
           text: 'Testing highlight'
         }
       ];
-    };
 
     beforeEach(() => {
       tour = setupTour(Shepherd, {}, steps, {
@@ -92,9 +90,9 @@ describe('Modal mode', () => {
     });
   });
 
-  describe('Modal with multiple Tours', function() {
-    it('only activates one SVG overall', async function() {
-      const steps = [
+  describe('Modal with multiple Tours', () => {
+  it('only activates one SVG overall', () => {
+  const steps = [
         {
           id: 'test',
           title: 'This is a test step for our tour'
@@ -116,6 +114,6 @@ describe('Modal mode', () => {
 
       cy.get('.shepherd-modal-overlay-container').should('have.length', 2);
       cy.get('.shepherd-modal-is-visible').should('have.length', 1);
-    });
-  });
+});
+});
 });

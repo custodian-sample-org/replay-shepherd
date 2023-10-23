@@ -2,10 +2,10 @@ import { Evented } from './evented.js';
 import { Step } from './step.js';
 import autoBind from './utils/auto-bind.js';
 import {
-  isHTMLElement,
-  isFunction,
-  isString,
-  isUndefined
+    isHTMLElement,
+    isFunction,
+    isString,
+    isUndefined
 } from './utils/type-check.js';
 import { cleanupSteps } from './utils/cleanup.js';
 import { normalizePrefix, uuid } from './utils/general.js';
@@ -157,9 +157,7 @@ export class Tour extends Evented {
    * @return {Step} The step corresponding to the `id`
    */
   getById(id) {
-    return this.steps.find((step) => {
-      return step.id === id;
-    });
+    return this.steps.find((step) => step.id === id);
   }
 
   /**

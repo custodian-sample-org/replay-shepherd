@@ -11,9 +11,7 @@ const DEFAULT_STEP_CLASS = 'shepherd-step-tooltip';
 describe('Tour | Step', () => {
   let tour;
 
-  const showOn = () => {
-    return true;
-  };
+  const showOn = () => true;
 
   const when = {
     show() {}
@@ -96,9 +94,7 @@ describe('Tour | Step', () => {
       }
     });
 
-    const beforeShowPromise = new Promise((resolve) => {
-      return setTimeout(() => resolve('beforeShowPromise worked!'), 1000);
-    });
+    const beforeShowPromise = new Promise((resolve) => setTimeout(() => resolve('beforeShowPromise worked!'), 1000));
 
     const beforeShowPromiseTestStep = instance.addStep({
       text: 'Before Show Promise Step',
@@ -325,9 +321,7 @@ describe('Tour | Step', () => {
 
       await window.requestAnimationFrame(
         () =>
-          new Promise((resolve) => {
-            return resolve();
-          })
+          new Promise((resolve) => resolve())
       );
 
       expect(document.querySelector('.shepherd-text').textContent).toBe(
@@ -348,9 +342,7 @@ describe('Tour | Step', () => {
 
       await window.requestAnimationFrame(
         () =>
-          new Promise((resolve) => {
-            return resolve();
-          })
+          new Promise((resolve) => resolve())
       );
 
       expect(document.querySelector('.button1').textContent).toBe('button one');
@@ -368,9 +360,7 @@ describe('Tour | Step', () => {
 
       await window.requestAnimationFrame(
         () =>
-          new Promise((resolve) => {
-            return resolve();
-          })
+          new Promise((resolve) => resolve())
       );
 
       const buttonOne = document.querySelector('.button1');
@@ -388,9 +378,7 @@ describe('Tour | Step', () => {
 
       await window.requestAnimationFrame(
         () =>
-          new Promise((resolve) => {
-            return resolve();
-          })
+          new Promise((resolve) => resolve())
       );
 
       const element = document.querySelector('.shepherd-element');
@@ -403,9 +391,7 @@ describe('Tour | Step', () => {
 
       await window.requestAnimationFrame(
         () =>
-          new Promise((resolve) => {
-            return resolve();
-          })
+          new Promise((resolve) => resolve())
       );
 
       const element = document.querySelector('.shepherd-element');
@@ -477,15 +463,11 @@ describe('Tour | Step', () => {
       const resSpy = jest.spyOn(resTester, 'scrollIntoView')
       document.body.appendChild(resTester);
 
-      const beforeShowPromise = new Promise((resolve) => {
-        return setTimeout(() => resolve('beforeShowPromise worked!'), 1000);
-      });
+      const beforeShowPromise = new Promise((resolve) => setTimeout(() => resolve('beforeShowPromise worked!'), 1000));
 
       const step = new Step('test', {
         attachTo: { element: '.post-res-scroll-test', on: 'center' },
-        beforeShowPromise: () => {
-          return beforeShowPromise
-        }
+        beforeShowPromise: () => beforeShowPromise
       });
 
       step.show()
@@ -499,15 +481,11 @@ describe('Tour | Step', () => {
     it('calls the custom handler after before-show promise resolution', () => {
       let resHandlerAdded = false;
 
-      const beforeShowPromise = new Promise((resolve) => {
-        return setTimeout(() => resolve('beforeShowPromise worked!'), 1000);
-      });
+      const beforeShowPromise = new Promise((resolve) => setTimeout(() => resolve('beforeShowPromise worked!'), 1000));
 
       const step = new Step('test', {
         scrollToHandler: () => (resHandlerAdded = true),
-        beforeShowPromise: () => {
-          return beforeShowPromise
-        }
+        beforeShowPromise: () => beforeShowPromise
       });
 
       const resSpy = jest.spyOn(step.options, 'scrollToHandler')
